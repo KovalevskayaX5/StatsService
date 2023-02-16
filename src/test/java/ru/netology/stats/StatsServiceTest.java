@@ -24,7 +24,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] amount = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMedium = 15;
+        int expectedMedium = (8+15+13+15+17+20+19+20+7+14+14+18)/amount.length;
         int actualMedium = service.getMediumSalesPerMonth(amount);
         Assertions.assertEquals(expectedMedium, actualMedium);
     }
@@ -72,5 +72,8 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedMaxMediumSales, actualMaxMediumSales);
     }
+
+
+
 }
 
