@@ -12,7 +12,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] amount = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedSum = 180;
+        int expectedSum = 8+15+13+15+17+20+19+20+7+14+14+18;
         int actualSum = service.getSum_Sales(amount);
 
         Assertions.assertEquals(expectedSum, actualSum);
@@ -24,7 +24,8 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] amount = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMedium = (8+15+13+15+17+20+19+20+7+14+14+18)/amount.length;
+       int expectedMedium = (8+15+13+15+17+20+19+20+7+14+14+18)/amount.length;
+
         int actualMedium = service.getMediumSalesPerMonth(amount);
         Assertions.assertEquals(expectedMedium, actualMedium);
     }
