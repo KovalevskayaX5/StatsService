@@ -53,7 +53,7 @@ public class StatsService {
         int MinMediumMonth = 0;
         for (int i = 0; i < amount.length; i++) {
 
-            if (amount[i] < 15) {
+            if (amount[i] < amount.length) {
                 MinMediumMonth = MinMediumMonth + 1;
             }
 
@@ -65,7 +65,7 @@ public class StatsService {
     public int getMaxMediumSales(int[] amount) {
         int MaxMediumSales = 0;
         for (int i = 0; i < amount.length; i++) {
-            if (amount[i] > 15) {
+            if (amount[i] >amount.length) {
                 MaxMediumSales = MaxMediumSales + 1;
             }
         }
