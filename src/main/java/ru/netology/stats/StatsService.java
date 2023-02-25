@@ -27,49 +27,49 @@ public class StatsService {
 
     //Месяц с макс продажей
     public int getMaxMonthSales(int[] amount) {
-        int MaxMonth = 0;
+        int maxMonth = 0;
 
         for (int i = amount.length - 1; i >= 0; i--) {
-            if (amount[i] > amount[MaxMonth]) {
-                MaxMonth = i;
+            if (amount[i] > amount[maxMonth]) {
+                maxMonth = i;
             }
         }
-        return MaxMonth;
+        return maxMonth;
     }
 
     // Месяц с мин продажей
     public int getMinMonthSales(int[] amount) {
-        int MinMonth = 0;
-        for (int i = 0; i < amount.length; i++) {
-            if (amount[i] < amount[MinMonth]) {
-                MinMonth = i;
+        int minMonth = 0;
+        for (int i = amount.length - 1; i>=0; i--){
+            if (amount[i] <amount[minMonth]){
+                minMonth = i;
             }
         }
-        return MinMonth;
+        return minMonth;
     }
 
     // КОличество месяцев с продажами ниже среднего (5)
     public int getMinMediumSales(int[] amount) {
-        int MinMediumMonth = 0;
+        int minMediumMonth = 0;
         for (int i = 0; i < amount.length; i++) {
 
-            if (amount[i] < amount.length) {
-                MinMediumMonth = MinMediumMonth + 1;
+            if (amount[i] < getMediumSalesPerMonth(amount)) {
+                minMediumMonth = minMediumMonth + 1;
             }
 
         }
-        return MinMediumMonth;
+        return minMediumMonth;
     }
 
     //Количество месяцев с продажами выше среднего (5)
     public int getMaxMediumSales(int[] amount) {
-        int MaxMediumSales = 0;
+        int maxMediumSales = 0;
         for (int i = 0; i < amount.length; i++) {
-            if (amount[i] >amount.length) {
-                MaxMediumSales = MaxMediumSales + 1;
+            if (amount[i] >getMediumSalesPerMonth(amount)) {
+                maxMediumSales = maxMediumSales + 1;
             }
         }
-        return MaxMediumSales;
+        return maxMediumSales;
     }
 
 }
